@@ -70,7 +70,7 @@ function azur_get_archives() {
   }
   $output .= "</ul>\n";
 
-  $html = "<div class='archive'>\n";
+  $html = "<div class='azur-archive'>\n";
   $html .= $output;
   $html .= "</div>\n";
   return $html;
