@@ -2,35 +2,35 @@
 /* 
 Plugin Name: Azur Archives
 Plugin URI: http://my-azur.de
-Version: 0.1
+Version: 0.2
 Author: Marco Krage
 Author URI: http://my-azur.de
 Description: Fancy Archives per Shortcode on any Page
 */
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+  die;
 }
 
 function azur_get_archives() {
-	global $wpdb, $wp_locale;
+  global $wpdb, $wp_locale;
 
-	$defaults = array(
-		'type' => 'monthly', 'limit' => '',
-		'format' => 'html', 'before' => '',
-		'after' => '', 'show_post_count' => false,
-		'order' => 'DESC',
-	);
+  $defaults = array(
+    'type' => 'monthly', 'limit' => '',
+    'format' => 'html', 'before' => '',
+    'after' => '', 'show_post_count' => false,
+    'order' => 'DESC',
+  );
   
   $args = '';
-	$r = wp_parse_args( $args, $defaults );
-	extract( $r, EXTR_SKIP );
+  $r = wp_parse_args( $args, $defaults );
+  extract( $r, EXTR_SKIP );
 
-	//filters
-	$where = apply_filters( 'getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish'", $r );
-	$join = apply_filters( 'getarchives_join', '', $r );
+  //filters
+  $where = apply_filters( 'getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish'", $r );
+  $join = apply_filters( 'getarchives_join', '', $r );
 
-	$output = '';
+  $output = '';
 
   $orderby = 'post_date DESC ';
   $query = "SELECT * FROM $wpdb->posts $join $where ORDER BY $orderby $limit";
@@ -76,8 +76,7 @@ function azur_get_archives() {
   return $html;
 }
 
-function azur_archives($content) {
-  $content .= azur_get_archives();
-  return $content;
+function azur_archives($atts) {
+  return azur_get_archives();
 }
 add_shortcode( 'azur-archives', 'azur_archives' );
