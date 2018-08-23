@@ -9,7 +9,7 @@ On any Page use:
 ```
 
 ## Recommended CSS
-```
+```CSS 
 .azur-archive ul {
   padding: 0;
   margin-left: 0;  
