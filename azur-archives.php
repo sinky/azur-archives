@@ -2,7 +2,7 @@
 /* 
 Plugin Name: Azur Archives
 Plugin URI: http://my-azur.de
-Version: 0.2
+Version: 1.0
 Author: Marco Krage
 Author URI: http://my-azur.de
 Description: Fancy Archives per Shortcode on any Page
