@@ -1,13 +1,14 @@
 <?php  
 /* 
 Plugin Name: Azur Archives
-Plugin URI: http://my-azur.de
+Plugin URI: https://github.com/sinky/azur-archives
 Version: 1.0
 Author: Marco Krage
 Author URI: http://my-azur.de
-Description: Fancy Archives per Shortcode on any Page
+Description: Display fancy archive list by shortcode
 GitHub Plugin URI: https://github.com/sinky/azur-archives
 */
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
