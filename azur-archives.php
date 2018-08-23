@@ -9,28 +9,28 @@ Description: Fancy Archives per Shortcode on any Page
 */
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-  die;
+	die;
 }
 
 function azur_get_archives() {
-  global $wpdb, $wp_locale;
+	global $wpdb, $wp_locale;
 
-  $defaults = array(
-    'type' => 'monthly', 'limit' => '',
-    'format' => 'html', 'before' => '',
-    'after' => '', 'show_post_count' => false,
-    'order' => 'DESC',
-  );
+	$defaults = array(
+		'type' => 'monthly', 'limit' => '',
+		'format' => 'html', 'before' => '',
+		'after' => '', 'show_post_count' => false,
+		'order' => 'DESC',
+	);
   
   $args = '';
-  $r = wp_parse_args( $args, $defaults );
-  extract( $r, EXTR_SKIP );
+	$r = wp_parse_args( $args, $defaults );
+	extract( $r, EXTR_SKIP );
 
-  //filters
-  $where = apply_filters( 'getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish'", $r );
-  $join = apply_filters( 'getarchives_join', '', $r );
+	//filters
+	$where = apply_filters( 'getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish'", $r );
+	$join = apply_filters( 'getarchives_join', '', $r );
 
-  $output = '';
+	$output = '';
 
   $orderby = 'post_date DESC ';
   $query = "SELECT * FROM $wpdb->posts $join $where ORDER BY $orderby $limit";
