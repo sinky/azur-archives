@@ -4,7 +4,7 @@ Plugin Name: Azur Archives
 Plugin URI: https://github.com/sinky/azur-archives
 Version: 1.0
 Author: Marco Krage
-Author URI: http://my-azur.de
+Author URI: https://my-azur.de
 Description: Display fancy archive list by shortcode
 */
 
